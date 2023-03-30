@@ -1,32 +1,19 @@
-///*******************************THINK TWICE CODE ONCE*******************************///
-///*******************************NO CODE NO FOOD*******************************///
-#define _USE_MATH_DEFINES
-#include <bits/stdc++.h>
-#include <cstdlib>
-#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
-#define loop(n) for(int i=0;i<n;i++)
-#define ll long long
-using namespace std;
-//int f[10000001];
-//vector<int>a[100001];
-int dis[100001];
+// you can use includes, for example:
+#include <algorithm>
 
-int main()
-{
-    //freopen("team.in", "r", stdin);
-    //freopen("output.txt","w",stdout);
-    fast;
-int n;
-cin>>n;
-int a[n];
-loop(n)
-cin>>a[i];
-sort(a,a+n);
-int l=0,r=n-1,mn=INT_MAX;
+// you can write to stdout for debugging purposes, e.g.
+// cout << "this is a debug message" << endl;
+
+int solution(vector<int> &A) {
+    // Implement your solution here
+    int n =A.size();
+    sort(A.begin(),A.end());
+int l=0,r=n-1;
+int mn =abs(A[l]+A[r]);
 while(l<=r)
 {
-    mn=min(mn,abs(a[l]+a[r]));
-    if(abs(a[l])>abs(a[r]))
+    mn=min(mn,abs(A[l]+A[r]));
+    if(abs(A[l])>abs(A[r]))
     {
         l++;
     }
@@ -34,8 +21,6 @@ while(l<=r)
         r--;
 
 }
-cout<<mn;
+return mn;
 
-
-    return 0;
 }
