@@ -1,45 +1,24 @@
-///*******************************THINK TWICE CODE ONCE*******************************///
-///*******************************NO CODE NO FOOD*******************************///
-#define _USE_MATH_DEFINES
-#include <bits/stdc++.h>
-#include <cstdlib>
-#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
-#define loop(n) for(int i=0;i<n;i++)
-#define ll long long
-using namespace std;
-//int f[10000001];
-//vector<int>a[100001];
- ll mod =1000000007;
-ll fac(ll n)
-{
-    if (n == 0||n == 1)
-        return 1;
-    return (n * fac(n-1))%mod;
-}
-int main()
-{
-    //freopen("team.in", "r", stdin);
-    //freopen("output.txt","w",stdout);
-    fast;
-   int n;
-   cin>>n;
-   int a[n];
-   loop(n)
-   cin>>a[i];
-   sort(a,a+n);
+// you can use includes, for example:
+#include <algorithm>
+
+// you can write to stdout for debugging purposes, e.g.
+// cout << "this is a debug message" << endl;
+
+int solution(vector<int> &A) {
+    // Implement your solution here
+  int n=A.size();
+   sort(A.begin(),A.end());
    int ans=0;
-   loop(n)
+   for(int i=0;i<n;i++)
    {
        int k=i+2;
        for(int j=i+1;j<n;j++)
        {
-           while(k<n && a[i]+a[j]>a[k])
+           while(k<n && A[i]+A[j]>A[k])
               k++; //else if e continue the number will get more bigger so there's no need to continue
                    //so we need to make one of the first two values bigger
               ans +=k-j-1;
        }
    }
-   cout<<ans;
-
-    return 0;
+   return ans;
 }
