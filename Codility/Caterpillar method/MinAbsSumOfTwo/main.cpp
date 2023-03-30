@@ -3,7 +3,7 @@
 
 // you can write to stdout for debugging purposes, e.g.
 // cout << "this is a debug message" << endl;
-
+  // Time complexity:O(N * log(N))
 int solution(vector<int> &A) {
     // Implement your solution here
     int n =A.size();
